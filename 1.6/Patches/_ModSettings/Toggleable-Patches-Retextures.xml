@@ -4,7 +4,7 @@
 	<Operation Class="ModSettingsFramework.PatchOperationModOption">
 		<defaultValue>True</defaultValue>
 		<label>Enable new worldmap textures</label>
-		<tooltip>Enable new textures for world map biome tiles.</tooltip>
+		<tooltip>Enable new textures for world map biome tiles (Currently: Tundra, Arid).</tooltip>
 		<id>RG_WorldmapTextures</id>
 		<category>RG_Retextures</category>
 		<order>110</order>
@@ -21,6 +21,12 @@
 					<texture>World/RG_Biomes/AridShrubland</texture>
 				</value>
 			</li>
+<!--			<li Class="PatchOperationReplace">
+				<xpath>/Defs/BiomeDef[defName = "Ocean" or defName = "Lake"]/texture</xpath>
+				<value>
+					<texture>World/RG_Biomes/Ocean</texture>
+				</value>
+			</li>-->
 		</operations>
 	</Operation>
 	<!-- ================ New rock atlas texture ================ -->
