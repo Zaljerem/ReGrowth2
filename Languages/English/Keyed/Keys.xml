@@ -37,6 +37,7 @@
 	<RG.PlantPollutionNoDeath>Plants no longer die from pollution</RG.PlantPollutionNoDeath>
     <RG.PlantPollutionNoDeathDesc>When enabled, plants will no longer die as a result of pollution. They will still be polluted, but will not die.</RG.PlantPollutionNoDeathDesc>
 	<RG.ChunkContains>Contains ore: {0}</RG.ChunkContains>
+	<RG.ToggleWorldMapBeautification>Toggle world map beautification</RG.ToggleWorldMapBeautification>
 	<SimpleFxSplashes.Settings.SizeMultiplier>Splash size (default: {0}): {3}</SimpleFxSplashes.Settings.SizeMultiplier>
 	<SimpleFxSplashes.Settings.SizeMultiplier.Desc>Adjust how big the splash particles are.</SimpleFxSplashes.Settings.SizeMultiplier.Desc>
 	
