@@ -29,6 +29,23 @@
 			</li>-->
 		</operations>
 	</Operation>
+	<!-- ================ Rock Chunk Texture Replacer================ -->
+	<Operation Class="ModSettingsFramework.PatchOperationModOption">
+		<defaultValue>True</defaultValue>
+		<label>Enable HD rock chunk textures</label>
+		<tooltip>Enable HD textures for rock chunks.</tooltip>
+		<id>RG_RockChunksTextures</id>
+		<category>RG_Retextures</category>
+		<order>111</order>
+		<operations>
+			<li Class="PatchOperationReplace">
+				<xpath>/Defs/ThingDef[@Name = "ChunkBase"]/graphicData/texPath</xpath>
+				<value>
+					<texPath>Things/Item/Chunk/RG_ChunkStone</texPath>
+				</value>
+			</li>
+		</operations>
+	</Operation>
 	<!-- ================ New rock atlas texture ================ -->
 	<Operation Class="ModSettingsFramework.PatchOperationModOption">
 		<defaultValue>True</defaultValue>
