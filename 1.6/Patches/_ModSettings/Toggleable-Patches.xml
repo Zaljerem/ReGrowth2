@@ -727,13 +727,6 @@
 		<category>RG_Core</category>
 		<order>5</order>
 		<operations>
-			<!-- Add BiomesKitWorldLayer -->
-			<li Class="PatchOperationAdd">
-				<xpath>/Defs/PlanetLayerDef[defName="Surface"]/worldDrawLayers</xpath>
-				<value>
-					<li>ReGrowthCore.BiomesKitWorldLayer</li>
-				</value>
-			</li>
 			<!-- Add the custom WorldGenStepDef -->
 			<li Class="PatchOperationAdd">
 				<xpath>/Defs</xpath>
