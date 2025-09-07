@@ -30,7 +30,7 @@
 		</operations>
 	</Operation>
 	<!-- ================ Rock Chunk Texture Replacer================ -->
-	<Operation Class="ModSettingsFramework.PatchOperationModOption">
+<!--	<Operation Class="ModSettingsFramework.PatchOperationModOption">
 		<defaultValue>True</defaultValue>
 		<label>Enable HD rock chunk textures</label>
 		<tooltip>Enable HD textures for rock chunks. Clean Texture user might want to disable it.</tooltip>
@@ -45,7 +45,7 @@
 				</value>
 			</li>
 		</operations>
-	</Operation>
+	</Operation>-->
 	<!-- ================ New rock atlas texture ================ -->
 	<Operation Class="ModSettingsFramework.PatchOperationModOption">
 		<defaultValue>True</defaultValue>
