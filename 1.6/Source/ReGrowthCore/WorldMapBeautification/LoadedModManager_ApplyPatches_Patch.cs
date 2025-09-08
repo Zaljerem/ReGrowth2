@@ -1,21 +1,19 @@
-using System;
-using RimWorld;
 using HarmonyLib;
 using Verse;
 using System.Collections.Generic;
-using Verse.Noise;
-using UnityEngine;
-using System.Linq;
 using System.Xml;
-using ModSettingsFramework;
+
 
 namespace ReGrowthCore
 {
-    [HarmonyPatch(typeof(LoadedModManager), "ApplyPatches")]
+    [HarmonyPatch(typeof(LoadedModManager))]
+    [HarmonyPatch("ApplyPatches")]
+    [HarmonyPatch(new[] { typeof(XmlDocument), typeof(Dictionary<XmlNode, LoadableXmlAsset>) })]
     public static class LoadedModManager_ApplyPatches_Patch
     {
         public static void Postfix(XmlDocument xmlDoc, Dictionary<XmlNode, LoadableXmlAsset> assetlookup)
         {
+         
             var patchOpSwapExtension = new PatchOperationAttributeSet
             {
                 xpath = "Defs/BiomeDef/modExtensions/li[@Class=\"BiomesKit.BiomesKitControls\"]",
