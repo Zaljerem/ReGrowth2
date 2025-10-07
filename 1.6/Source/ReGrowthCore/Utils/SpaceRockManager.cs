@@ -6,6 +6,8 @@ namespace RimWorld
     public static class SpaceRockManager
     {
         public const string SpaceRockTexPath = "Things/Building/Linked/RG_AsteroidWallFlecked_Atlas";
+        public const string RockTexPath = "Things/Building/Linked/Rock_Atlas";
+        public const string RG_RockTexPath = "Things/Building/Linked/RG_";
         public static Dictionary<Mineable, bool> spaceRocks = new Dictionary<Mineable, bool>();
         public static bool isSpawningMeteoriteContents = false;
         public static bool isGeneratingOresForAsteroidStep = false;
@@ -37,7 +39,7 @@ namespace RimWorld
             if (m == null) return false;
             return spaceRocks.TryGetValue(m, out var isSpaceRock) && isSpaceRock;
         }
-        
+
         public static void UpdateGraphic(this Mineable mineable)
         {
             LongEventHandler.ExecuteWhenFinished(delegate
@@ -45,12 +47,16 @@ namespace RimWorld
                 Graphic graphic = mineable.Graphic;
                 if (graphic.data.texPath != SpaceRockTexPath)
                 {
+                    if (graphic.data.texPath != RockTexPath && graphic.data.texPath.StartsWith(RG_RockTexPath) is false || graphic.data.graphicClass != typeof(Graphic_Single))
+                    {
+                        return;
+                    }
                     var copy = new GraphicData();
                     copy.CopyFrom(graphic.data);
                     copy.texPath = SpaceRockTexPath;
                     mineable.graphicInt = copy.GraphicColoredFor(mineable);
                 }
-                
+
                 var map = mineable.Map;
                 mineable.DirtyMapMesh(map);
             });
