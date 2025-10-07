@@ -1064,7 +1064,8 @@
 					</li>
 				</value>
 			</li>
-			<li Class="PatchOperationAddModExtension" MayRequireAnyOf="DankPyon.Medieval.Overhaul">
+			<!-- This biome is not in 1.6 version of Medieval Overhaul -->
+			<!--<li Class="PatchOperationAddModExtension" MayRequireAnyOf="DankPyon.Medieval.Overhaul">
 				<xpath>/Defs/BiomeDef[defName="DankPyon_AncientForest"]</xpath>
 				<value>
 					<li Class="ReGrowthCore.BiomesKitControl">
@@ -1080,7 +1081,7 @@
 						<impassableSizeMultiplier>1.3</impassableSizeMultiplier>
 					</li>
 				</value>
-			</li>
+			</li>-->
 			<!-- ================ Outland: Toxic Forest ================ -->
 			<li Class="PatchOperationAddModExtension" MayRequire="Neronix17.Outland.ToxicForest">
 				<xpath>/Defs/BiomeDef[defName="Outland_ToxicForest"]</xpath>
