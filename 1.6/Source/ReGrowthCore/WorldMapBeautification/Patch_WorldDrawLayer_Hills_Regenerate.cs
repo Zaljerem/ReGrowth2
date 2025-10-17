@@ -50,6 +50,11 @@ namespace ReGrowthCore
                 return true;
             }
 
+            if (__instance.planetLayer.Def != PlanetLayerDefOf.Surface)
+	    {
+            return true; //Because other planet layers render incorrectly
+            }
+
             // Force clear by accessing the subMeshes field directly
             var subMeshesField = typeof(WorldDrawLayerBase).GetField("subMeshes",
                 BindingFlags.Instance | BindingFlags.NonPublic);
