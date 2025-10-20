@@ -35,8 +35,11 @@ namespace ReGrowthCore
             set
             {
                 worldBeautificationToggle = value;
-                Find.World.renderer.SetDirty<WorldDrawLayer_Hills>(Find.WorldGrid.Surface);
-                
+                foreach (PlanetLayer planetLayer in Find.WorldGrid.PlanetLayers.Values)
+                {
+                    planetLayer.WorldDrawLayers.Find(f => f.GetType() == typeof(WorldDrawLayer_Hills))?.SetDirty();
+                }
+
             }
         }
 
@@ -52,7 +55,17 @@ namespace ReGrowthCore
             }
         }
 
-
+        public static bool DefaultWMBPTextureFallback
+        {
+            get
+            {
+                if (ModSettingsFrameworkSettings.GetModSettingsContainer(ReGrowthMod.modPack.PackageIdPlayerFacing).patchOperationStates.TryGetValue("RG_WorldMapBeautificationProject", out var value) && value)
+                {
+                    return true;
+                }
+                return false;
+            }
+        }
 
     }
     

@@ -1127,4 +1127,14 @@
 			</li>-->
 		</operations>
 	</Operation>
+
+
+	<Operation Class="ModSettingsFramework.PatchOperationModOption">
+		<defaultValue>False</defaultValue>
+		<label>WMBP - fallback to default textures</label>
+		<tooltip>Display default textures if biome is not configured for world map beautification. (Default: False)</tooltip>
+		<id>RG_WMBPDefaultFallback</id>
+		<category>RG_Core</category>
+		<order>6</order>		
+	</Operation>
 </Patch>
