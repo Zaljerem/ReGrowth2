@@ -224,7 +224,6 @@
 			</li>
 		</operations>
 	</Operation>
-
 	<!-- ================ Replantable Anima Tree ================ -->
 	<Operation Class="ModSettingsFramework.PatchOperationModOption">
 		<defaultValue>False</defaultValue>
@@ -322,6 +321,26 @@
 				<value>
 					<minifiedDef>MinifiedTree</minifiedDef>
 				</value>
+			</li>
+		</operations>
+	</Operation>
+	<!-- ================ Disable Snow on Plants ================ -->
+	<Operation Class="ModSettingsFramework.PatchOperationModOption">
+		<defaultValue>True</defaultValue>
+		<label>Disable snow on plants</label>
+		<tooltip>Allows for the player to disable the ability for snow to accumulate on plants. It's for people like me, who hate it. (Default: True)</tooltip>
+		<id>RG_DisableSnowOnPlants</id>
+		<category>RG_Core</category>
+		<order>65</order>
+		<operations>
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[plant/leaflessSnowOverlayGraphicPath]/plant/leaflessSnowOverlayGraphicPath</xpath>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[plant/immatureSnowOverlayGraphicPath]/plant/immatureSnowOverlayGraphicPath</xpath>
+			</li>
+			<li Class="PatchOperationRemove">
+				<xpath>/Defs/ThingDef[plant/snowOverlayGraphicPath]/plant/snowOverlayGraphicPath</xpath>
 			</li>
 		</operations>
 	</Operation>
@@ -715,9 +734,6 @@
 			</li>
 		</operations>
 	</Operation>
-
-
-
 	<!-- ================ World Map Beautification Project ================ -->
 	<Operation Class="ModSettingsFramework.PatchOperationModOption">
 		<defaultValue>True</defaultValue>
@@ -734,7 +750,7 @@
 					<WorldGenStepDef>
 						<defName>BiomesKitWorldGenStep</defName>
 						<order>999</order>
-						<worldGenStep Class="ReGrowthCore.LateBiomeWorker" />
+						<worldGenStep Class="ReGrowthCore.LateBiomeWorker"/>
 					</WorldGenStepDef>
 				</value>
 			</li>
@@ -1104,7 +1120,6 @@
 					</li>
 				</value>
 			</li>
-
 			<!-- ================ Winter Taiga Biome ================ -->
 			<!--			<li Class="PatchOperationAdd" MayRequire="reel.FrozenForest">
 				<xpath>/Defs/BiomeDef[defName = "WinterTaiga"]/modExtensions/li[@Class="ReGrowthCore.BiomesKitControl"]</xpath>
