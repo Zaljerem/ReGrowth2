@@ -734,7 +734,7 @@
 			</li>
 		</operations>
 	</Operation>
-	<!-- ================ World Map Beautification Project ================ -->
+		<!-- ================ World Map Beautification Project ================ -->
 	<Operation Class="ModSettingsFramework.PatchOperationModOption">
 		<defaultValue>True</defaultValue>
 		<label>Enable world map beautification</label>
@@ -750,7 +750,7 @@
 					<WorldGenStepDef>
 						<defName>BiomesKitWorldGenStep</defName>
 						<order>999</order>
-						<worldGenStep Class="ReGrowthCore.LateBiomeWorker"/>
+						<worldGenStep Class="ReGrowthCore.LateBiomeWorker" />
 					</WorldGenStepDef>
 				</value>
 			</li>
@@ -823,6 +823,29 @@
 					</li>
 				</value>
 			</li>
+
+			<li Class="PatchOperationAddModExtension" MayRequire="Ludeon.RimWorld.Odyssey">
+				<xpath>/Defs/BiomeDef[defName="Glowforest"]</xpath>
+				<value>
+					<li Class="ReGrowthCore.BiomesKitControl">
+						     <forested>true</forested>
+                				     <uniqueHills>true</uniqueHills>
+                				     <forestSparseBelow>1100</forestSparseBelow>
+                				     <forestDenseAbove>1500</forestDenseAbove>
+                				     <mountainsSemiSnowyBelow>10</mountainsSemiSnowyBelow>
+               				    	     <impassableSemiSnowyBelow>25</impassableSemiSnowyBelow>
+                				     <impassableVerySnowyBelow>-5</impassableVerySnowyBelow>
+                				     <mountainsSnowyBelow>-5</mountainsSnowyBelow>
+                				     <impassableSnowyBelow>0</impassableSnowyBelow>
+                				     <materialRandomRotation>false</materialRandomRotation>
+                				     <smallHillSizeMultiplier>1.5</smallHillSizeMultiplier>
+                				     <largeHillSizeMultiplier>2</largeHillSizeMultiplier>
+                				     <mountainSizeMultiplier>1.4</mountainSizeMultiplier>
+                				     <impassableSizeMultiplier>1.3</impassableSizeMultiplier>
+					</li>
+				</value>
+			</li>
+
 			<!-- ================ Cold Biomes ================ -->
 			<li Class="PatchOperationAddModExtension">
 				<xpath>/Defs/BiomeDef[defName="BorealForest"]</xpath>
@@ -904,9 +927,9 @@
 				<value>
 					<li Class="ReGrowthCore.BiomesKitControl">
 						<uniqueHills>true</uniqueHills>
-						<snowpilesBelow>999</snowpilesBelow>
-						<mountainsSnowyBelow>999</mountainsSnowyBelow>
-						<impassableSnowyBelow>999</impassableSnowyBelow>
+						<snowpilesBelow>-15</snowpilesBelow>
+						<mountainsSnowyBelow>-5</mountainsSnowyBelow>
+						<impassableSnowyBelow>0</impassableSnowyBelow>
 						<mountainsVerySnowyBelow>-12</mountainsVerySnowyBelow>
 						<impassableVerySnowyBelow>-5</impassableVerySnowyBelow>
 						<mountainsFullySnowyBelow>-21</mountainsFullySnowyBelow>
@@ -919,7 +942,71 @@
 					</li>
 				</value>
 			</li>
+
+			<li Class="PatchOperationAddModExtension" MayRequire="Ludeon.RimWorld.Odyssey">
+				<xpath>/Defs/BiomeDef[defName="GlacialPlain"]</xpath>
+				<value>
+					<li Class="ReGrowthCore.BiomesKitControl">
+						  <forested>true</forested>
+                				  <uniqueHills>true</uniqueHills>
+                				  <snowpilesBelow>999</snowpilesBelow>
+                				  <mountainsSnowyBelow>999</mountainsSnowyBelow>
+                				  <impassableSnowyBelow>999</impassableSnowyBelow>
+                				  <mountainsVerySnowyBelow>-12</mountainsVerySnowyBelow>
+                				  <impassableVerySnowyBelow>-5</impassableVerySnowyBelow>
+                				  <mountainsFullySnowyBelow>-21</mountainsFullySnowyBelow>
+                		 	          <impassableFullySnowyBelow>-21</impassableFullySnowyBelow>
+                				  <materialRandomRotation>false</materialRandomRotation>
+               					  <smallHillSizeMultiplier>1.5</smallHillSizeMultiplier>
+                				  <largeHillSizeMultiplier>2</largeHillSizeMultiplier>
+                				  <mountainSizeMultiplier>1.4</mountainSizeMultiplier>
+                				  <impassableSizeMultiplier>1.3</impassableSizeMultiplier>
+					</li>
+				</value>
+			</li>
+
+
+
 			<!-- ================ Arid Biomes ================ -->
+
+
+			<li Class="PatchOperationAddModExtension" MayRequire="Ludeon.RimWorld.Odyssey">
+				<xpath>/Defs/BiomeDef[defName="Scarlands"]</xpath>
+				<value>
+					<li Class="ReGrowthCore.BiomesKitControl">
+						     <uniqueHills>true</uniqueHills>
+                				     <mountainsSemiSnowyBelow>10</mountainsSemiSnowyBelow>
+                				     <impassableSemiSnowyBelow>25</impassableSemiSnowyBelow>
+                				     <mountainsSnowyBelow>-5</mountainsSnowyBelow>
+                				     <impassableSnowyBelow>0</impassableSnowyBelow>
+                				     <mountainsVerySnowyBelow>-12</mountainsVerySnowyBelow>
+                			   	     <impassableVerySnowyBelow>-5</impassableVerySnowyBelow>
+                				     <mountainsFullySnowyBelow>-21</mountainsFullySnowyBelow>
+                				     <impassableFullySnowyBelow>-21</impassableFullySnowyBelow>
+                				     <materialRandomRotation>false</materialRandomRotation>
+                				     <smallHillSizeMultiplier>1.5</smallHillSizeMultiplier>
+                				     <largeHillSizeMultiplier>2</largeHillSizeMultiplier>
+                				     <mountainSizeMultiplier>1.4</mountainSizeMultiplier>
+                				     <impassableSizeMultiplier>1.3</impassableSizeMultiplier>
+					</li>
+				</value>
+			</li>
+
+				<li Class="PatchOperationAddModExtension" MayRequire="Ludeon.RimWorld.Odyssey">
+				<xpath>/Defs/BiomeDef[defName="LavaField"]</xpath>
+				<value>
+					<li Class="ReGrowthCore.BiomesKitControl">
+						     <uniqueHills>true</uniqueHills>
+                				     <materialRandomRotation>false</materialRandomRotation>
+                				     <smallHillSizeMultiplier>1.5</smallHillSizeMultiplier>
+                				     <largeHillSizeMultiplier>2</largeHillSizeMultiplier>
+                				     <mountainSizeMultiplier>1.4</mountainSizeMultiplier>
+                				     <impassableSizeMultiplier>1.3</impassableSizeMultiplier>
+					</li>
+				</value>
+			</li>
+
+
 			<li Class="PatchOperationAddModExtension">
 				<xpath>/Defs/BiomeDef[defName="AridShrubland"]</xpath>
 				<value>
@@ -1120,6 +1207,7 @@
 					</li>
 				</value>
 			</li>
+
 			<!-- ================ Winter Taiga Biome ================ -->
 			<!--			<li Class="PatchOperationAdd" MayRequire="reel.FrozenForest">
 				<xpath>/Defs/BiomeDef[defName = "WinterTaiga"]/modExtensions/li[@Class="ReGrowthCore.BiomesKitControl"]</xpath>
