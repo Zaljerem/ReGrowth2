@@ -188,12 +188,45 @@ namespace ReGrowthCore
 	[HarmonyPriority(HarmonyLib.Priority.Last)]
 	static class Patch_JobOnCell
 	{
+		private static int lastBlightCheckTick = -1;
+		private static readonly Dictionary<int, bool> zoneBlightCache = new Dictionary<int, bool>();
+
 		static bool Prefix(Pawn pawn, IntVec3 c)
 		{
+			if (lastBlightCheckTick != Find.TickManager.TicksGame)
+			{
+				zoneBlightCache.Clear();
+				lastBlightCheckTick = Find.TickManager.TicksGame;
+			}
+
 			var map = pawn.Map;
 			var zone = map.zoneManager.zoneGrid[c.z * map.info.sizeInt.x + c.x];
 			if (zone != null && zone is IPlantToGrowSettable && ReGrowthCore_SmartFarming.compCache.TryGetValue(map.uniqueID, out MapComponent_SmartFarming comp) && comp.growZoneRegistry.TryGetValue(zone.ID, out ZoneData zoneData))
 			{
+				if (ReGrowthCore_SmartFarming.ModSettings.autoCutBlighted)
+				{
+					bool hasBlight;
+					if (!zoneBlightCache.TryGetValue(zone.ID, out hasBlight))
+					{
+						hasBlight = false;
+						foreach (var cell in zone.cells)
+						{
+							var plant = cell.GetPlant(map);
+							if (plant != null && plant.Blighted)
+							{
+								hasBlight = true;
+								break;
+							}
+						}
+						zoneBlightCache[zone.ID] = hasBlight;
+					}
+
+					if (hasBlight)
+					{
+						return false;
+					}
+				}
+
 				switch (zoneData.sowMode)
 				{
 					case SowMode.Smart:
