@@ -169,7 +169,7 @@ namespace ReGrowthCore
 					break;
 			}
 			yield return priorityGizmo;
-			if (basisZone != null)
+			if (basisZone != null && basisZone != thisZone)
 			{
 				yield return new Command_Action()
 				{
