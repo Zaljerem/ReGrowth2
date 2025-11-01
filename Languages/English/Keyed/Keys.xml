@@ -124,4 +124,5 @@
 	<SmartFarming.Inspector.DaysWorth> ({0} days worth)</SmartFarming.Inspector.DaysWorth>
 	
 	<SmartFarming.Icon.SetAll>Set zones to </SmartFarming.Icon.SetAll>
+	<SmartFarming.Icon.ConfirmMergeZones>Are you sure you want to merge these zones? This action cannot be undone.</SmartFarming.Icon.ConfirmMergeZones>
 </LanguageData>

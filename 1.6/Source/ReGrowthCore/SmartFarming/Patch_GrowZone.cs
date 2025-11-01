@@ -176,7 +176,10 @@ namespace ReGrowthCore
 					defaultLabel = "SmartFarming.Icon.MergeZones".Translate(),
 					defaultDesc = "SmartFarming.Icon.MergeZones.Desc".Translate(),
 					icon = ResourceBank.mergeZones,
-					action = () => zoneData.MergeZones(thisZone, basisZone)
+					action = () =>
+					{
+						Find.WindowStack.Add(Dialog_MessageBox.CreateConfirmation("SmartFarming.Icon.ConfirmMergeZones".Translate(), () => zoneData.MergeZones(thisZone, basisZone)));
+					}
 				};
 			}
 			yield break;
